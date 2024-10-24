@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templete/styles.css">
+    <title>Chat Application</title>
+</head>
+<body>
+<div id="app">
+    <h1>Chat Application</h1>
+
+    <!-- Login and Register Buttons -->
+    <div id="auth-buttons">
+        <button onclick="window.location.href='/login'">Login</button>
+        <button onclick="window.location.href='/register'">Register</button>
+    </div>
+
+    <!-- Registration Section (Visible only after registration page is accessed) -->
+    <div id="registration" style="display: none;">
+        <h2>Register</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="registerUser()">Register</button>
+    </div>
+
+    <!-- Channels Section (Visible after login) -->
+    <div id="channels" style="display: none;">
+        <h2>Channels</h2>
+        <button onclick="createChannel()">Create Channel</button>
+        <ul id="channelList"></ul>
+    </div>
+
+    <!-- Chat Section (Visible when in a channel) -->
+    <div id="chat" style="display: none;">
+        <h2>Chat</h2>
+        <ul id="messageList"></ul>
+        <input type="text" id="message" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script src="templete/script.js"></script>
+</body>
+</html>

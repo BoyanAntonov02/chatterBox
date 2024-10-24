@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long Id;
 
     @NotEmpty(message = "Username cannot be empty")
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
@@ -20,7 +20,7 @@ public class User {
 
     @NotEmpty(message = "Password cannot be empty")
     @Column(nullable = false)
-    private String passwordHash;
+    private String password;
 
     private LocalDateTime createdAt;
 
@@ -30,19 +30,19 @@ public class User {
     }
 
     public User(Long userId, String username, String passwordHash, LocalDateTime createdAt, LocalDateTime lastLogin) {
-        this.userId = userId;
+        this.Id = userId;
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.password = passwordHash;
         this.createdAt = createdAt;
         this.lastLogin = lastLogin;
     }
 
     public Long getUserId() {
-        return userId;
+        return Id;
     }
 
     public void setUserId(Long userId) {
-        this.userId = userId;
+        this.Id = userId;
     }
 
     public String getUsername() {
@@ -54,11 +54,11 @@ public class User {
     }
 
     public String getPasswordHash() {
-        return passwordHash;
+        return password;
     }
 
     public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+        this.password = passwordHash;
     }
 
     public LocalDateTime getCreatedAt() {

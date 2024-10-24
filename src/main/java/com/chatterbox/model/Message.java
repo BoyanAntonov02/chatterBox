@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long messageId;
+    private Long Id;
 
     @ManyToOne
     @JoinColumn(name = "channel_id", nullable = false)
@@ -30,7 +30,7 @@ public class Message {
     }
 
     public Message(Long messageId, Channel channel, User user, String content, LocalDateTime timestamp) {
-        this.messageId = messageId;
+        this.Id = messageId;
         this.channel = channel;
         this.user = user;
         this.content = content;
@@ -38,11 +38,11 @@ public class Message {
     }
 
     public Long getMessageId() {
-        return messageId;
+        return Id;
     }
 
     public void setMessageId(Long messageId) {
-        this.messageId = messageId;
+        this.Id = messageId;
     }
 
     public Channel getChannel() {

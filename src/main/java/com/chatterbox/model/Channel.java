@@ -11,15 +11,15 @@ import java.time.LocalDateTime;
 public class Channel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long channelId;
+    private Long Id;
 
     @NotEmpty(message = "Channel name cannot be empty")
     @Column(nullable = false)
-    private String channelName;
+    private String name;
 
     @NotEmpty(message = "Channel code cannot be empty")
     @Column(unique = true, nullable = false)
-    private String channelCode;
+    private String code;
 
     private LocalDateTime createdAt;
 
@@ -31,35 +31,35 @@ public class Channel {
     }
 
     public Channel(Long channelId, String channelName, String channelCode, LocalDateTime createdAt, User createdBy) {
-        this.channelId = channelId;
-        this.channelName = channelName;
-        this.channelCode = channelCode;
+        this.Id = channelId;
+        this.name = channelName;
+        this.code = channelCode;
         this.createdAt = createdAt;
         this.createdBy = createdBy;
     }
 
     public Long getChannelId() {
-        return channelId;
+        return Id;
     }
 
     public void setChannelId(Long channelId) {
-        this.channelId = channelId;
+        this.Id = channelId;
     }
 
     public @NotEmpty(message = "Channel name cannot be empty") String getChannelName() {
-        return channelName;
+        return name;
     }
 
     public void setChannelName(@NotEmpty(message = "Channel name cannot be empty") String channelName) {
-        this.channelName = channelName;
+        this.name = channelName;
     }
 
     public @NotEmpty(message = "Channel code cannot be empty") String getChannelCode() {
-        return channelCode;
+        return code;
     }
 
     public void setChannelCode(@NotEmpty(message = "Channel code cannot be empty") String channelCode) {
-        this.channelCode = channelCode;
+        this.code = channelCode;
     }
 
     public LocalDateTime getCreatedAt() {

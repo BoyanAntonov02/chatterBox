@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Channel</title>
+</head>
+<body>
+<h1>Create a New Channel</h1>
+
+<form action="#" th:action="@{/create-channel}" th:object="${channel}" method="post">
+    <div>
+        <label for="channelName">Channel Name:</label>
+        <input type="text" id="channelName" th:field="*{channelName}" required/>
+    </div>
+
+    <div>
+        <label for="channelCode">Channel Code:</label>
+        <input type="text" id="channelCode" th:field="*{channelCode}" required/>
+    </div>
+
+    <div>
+        <button type="submit">Create Channel</button>
+    </div>
+</form>
+
+</body>
+</html>
